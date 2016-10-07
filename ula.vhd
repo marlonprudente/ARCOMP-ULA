@@ -1,4 +1,4 @@
-livbrary ieee;
+library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
@@ -16,13 +16,13 @@ begin
 	soma <= x+y;
 	subtracao <= x-y;
 	quoc <= x/y;
-	maior <= '0000000000000001' when x>y else
-			 '0000000000000000' when x<=y else
-			 '0000000000000000';
-	saida <= soma when selec_op = "00"else
-	subtracao when selec_op = "01" else
-	maior when selec_op = "10" else
-	quoc when selec_op = "11" else
-	"0000000000000000";
+	maior <= "0000000000000001" when x>y else
+			 "0000000000000000" when x<=y else
+			 "0000000000000000";
+	saida <= soma when op = "00"else
+		subtracao when op = "01" else
+		maior when op = "10" else
+		quoc when op = "11" else
+		"0000000000000000";
 
 end architecture;
